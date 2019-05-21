@@ -2,6 +2,7 @@ package application;
 
 
 
+
 //import java.sql.Date;
 
 import javafx.application.Application;
@@ -58,9 +59,11 @@ public class ApplicationForm extends Application {
 	TextField txtnm = new TextField();
 	TextField txtdtl = new TextField();
 
-	private ChoiceBox<String> choicebox;
+//	private ChoiceBox<String> choicebox;
 	private ChoiceBox<String> choiceboxBursa;
 	private ChoiceBox<String> choicebox1;
+	private ChoiceBox<String> choiceboxnm;
+	private ChoiceBox<String> chKomuna;
 	// private DatePicker dtl;
 	 private java.sql.Date date; //= new java.sql.Date(0000-00-00);
 	
@@ -76,58 +79,50 @@ public class ApplicationForm extends Application {
 		
 		pane.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 		
-		Label lblemri = new Label("                       Emri");
-		Label lblmbiemri = new Label("                   Mbiemri");
-		Label lblid = new Label("          Id e studentit");
+		Label lblemri = new Label("     Emri");
+		Label lblmbiemri = new Label("         Mbiemri");
+		Label lblid = new Label("   Id e studentit");
 		Label lblditelindja = new Label("Data e lindjes");
-		Label lbladresa = new Label("                 Adresa");
-		Label lblqyteti = new Label("	Niveli i Studimeve:");
-		Label lblshteti = new Label("	   Shteti");
+		Label lbladresa = new Label("               Adresa");
+		Label lblqyteti = new Label("	Qyteti:");
+		Label lblshteti = new Label("	      Shteti");
 		Label lbldate= new Label("		Datelindja");
 		Label lblnrtel = new Label("	Nr i Telefonit");
-		Label lblemail = new Label("			Email-i");
-		Label lbluniversiteti = new Label("		Universiteti");
-		Label lblfakulteti = new Label("		Fakulteti");
-		Label lbldrejtimi = new Label("		Drejtimi");
+		Label lblemail = new Label("	Email-i");
+		Label lbluniversiteti = new Label("	Universiteti");
+		Label lblfakulteti = new Label("Fakulteti");
+		Label lbldrejtimi = new Label("Drejtimi");
 		Label lblVitiiStudimeve = new Label("   Viti i Studimeve");
-		Label lblNotaMesatare = new Label("			Nota mesatare");
+		Label lblNotaMesatare = new Label("	  Nota mesatare");
 		Label lblTranskriptaNotave = new Label("	Transkripta e Notave");
-		Label lblNiveliiStudimeve = new Label("Niveli i Studimeve");
-		Label lblBursa = new Label("	Zgjedh Bursen:");
+		Label lblNiveliiStudimeve = new Label("  Niveli i Studimeve");
+		Label lblBursa = new Label("Zgjedh Bursen:");
 
 	
-		choicebox = new ChoiceBox<>();
-		choicebox.setValue("Universiteti i Prishtines");
-		choicebox.getItems().addAll("Universiteti i Prishtines","Universiteti i Prizrenit","Universiteti i Mitrovices");
+//		choicebox = new ChoiceBox<>();
+//		choicebox.setValue("Universiteti i Prishtines");
+//		choicebox.getItems().addAll("Universiteti i Prishtines","Universiteti i Prizrenit","Universiteti i Mitrovices");
 		
 		choiceboxBursa = new ChoiceBox<>();
 		choiceboxBursa.setValue("MASHT");
 		choiceboxBursa.getItems().addAll("MASHT","Komunale");
 		
+		choiceboxnm = new ChoiceBox<>();
+		choiceboxnm.setValue("Nen 8");
+		choiceboxnm.getItems().addAll("Nen 8","Mbi 8","Mbi 9");
+		
+		
 		choicebox1 = new ChoiceBox<>();
-		choicebox1.setValue("Fakulteti Teknik");
-		choicebox1.getItems().addAll("Fakulteti Teknik","Fakulteti Filizofik","Fakulteti Filologjik","FSHMN");
-		pane.add(choicebox1, 1, 10); 
-	/*	if(choicebox.getValue() == "Universiteti i Prishtines"); 
-		{
-			choicebox1.getItems().addAll("Fakulteti Filizofik","Fakulteti Filologjik","FSHMN");
-		}
-		 if(choicebox.getValue() == "Universiteti i Prizrenit"); 
-		{
-			choicebox1.getItems().addAll("Fakulteti i Edukimit","FSHK","FSHMN");
-		}
+		choicebox1.setValue("Fakulteti i Arteve");
+		choicebox1.getItems().addAll("Fakulteti i Arteve","Fakulteti i Shkencave Sportive","Fakulteti Juridik","FSHMN","Fakulteti Ekonomik","Fakulteti Filologjik"
+				,"Fakulteti i Edukimit","Fakulteti i Ndertimtarise dhe Arkitektures","Fakulteti Filozofik","Fakulteti i Inxhinierise Mekanike"
+				,"Fakulteti i Mjekesise","Fakulteti i shkencave matematiko-natyrore","Fakulteti i Inxhinierise Elektrike dhe Kompjuterike");
 		pane.add(choicebox1, 1, 10); 
 		
-		switch(choicebox.getValue()){
-		case "Universiteti i Prishtines": 
-			choicebox1.getItems().addAll("Fakulteti Filizofik","Fakulteti Filologjik","FSHMN");
-			pane.add(choicebox1, 1, 10);
-			break;
-		case "Universiteti i Prizrenit": 
-			choicebox2.getItems().addAll("Fakulteti i Edukimit","FSHK","FSHMN");
-			pane.add(choicebox2, 1, 10);
-		
-		}  */
+		chKomuna = new ChoiceBox<>();
+		chKomuna.setValue("Prishtine");
+		chKomuna.getItems().addAll("Prishtine","Peje","Gjakove","Prizren","Malisheve","Ferizaj","Gjilan","Vushtrri");
+	
 				
 		lblemri.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
 		lblmbiemri.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
@@ -182,7 +177,7 @@ public class ApplicationForm extends Application {
 		lbla.setTextFill(Color.RED);;
 		
 		pane.add(lblqyteti, 0, 4);
-		pane.add(txtqyteti, 1, 4);
+		pane.add(chKomuna, 1, 4);
 		Label lblq = new Label();
 		pane.add(lblq, 1, 5);
 		lblq.setFont(Font.font("Times new Roman",FontPosture.ITALIC,12));
@@ -215,8 +210,18 @@ public class ApplicationForm extends Application {
 		lble.setFont(Font.font("Times new Roman",FontPosture.ITALIC,12));
 		lble.setTextFill(Color.RED);;
 		
-		pane.add(lbluniversiteti, 2, 8);
-		pane.add(choicebox,3,8);
+//		pane.add(lbluniversiteti, 2, 8);
+//		pane.add(choicebox,3,8);
+		
+		pane.add(lblNiveliiStudimeve, 2, 8);
+		pane.add(txtNiveliiStudimeve,3,8);
+	
+		
+		Label lblnm = new Label();
+		pane.add(lblnm, 3, 13);
+		lblnm.setFont(Font.font("Times new Roman",FontPosture.ITALIC,12));
+		lblnm.setTextFill(Color.RED);;
+		
 		
 		pane.add(lblfakulteti, 0, 10);
 		//pane.add(txtfakulteti,1,10);
@@ -238,27 +243,21 @@ public class ApplicationForm extends Application {
 		pane.add(lblv, 1, 13);
 		lblv.setFont(Font.font("Times new Roman",FontPosture.ITALIC,12));
 		lblv.setTextFill(Color.RED);;
-		pane.add(lblNiveliiStudimeve, 2, 12);
-		pane.add(txtNiveliiStudimeve,3,12);
-		Label lblnm = new Label();
-		pane.add(lblnm, 3, 13);
-		lblnm.setFont(Font.font("Times new Roman",FontPosture.ITALIC,12));
-		lblnm.setTextFill(Color.RED);;
+	
+		pane.add(lblNotaMesatare, 2, 12);
+		pane.add(choiceboxnm, 3, 12);
+		
 		
 		pane.add(lblBursa, 0, 14);
 		pane.add(choiceboxBursa, 1, 14);
 		
 
-		pane.add(lblNotaMesatare, 0, 15);
-		pane.add(txtnm, 1, 15);
-		
-		
-		
+	
 		Button btnApliko = new Button("Apliko");
-	/*	btnApliko.setFont(Font.font("Times new Roman",FontWeight.BOLD,16));
+		btnApliko.setFont(Font.font("Times new Roman",FontWeight.BOLD,16));
 		//btnApliko.setMinHeight(10);
 		//btnApliko.setMinWidth(10);
-		btnApliko.setTextFill(Color.GHOSTWHITE);
+	/*	btnApliko.setTextFill(Color.GHOSTWHITE);
 		btnApliko.setStyle("-fx-background-color: #000000,linear-gradient(#7ebcea, #2f4b8f),linear-gradient(#426ab7, #263e75),linear-gradient(#395cab, #223768);");
 		
 		btnApliko.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));  */
@@ -315,7 +314,7 @@ public class ApplicationForm extends Application {
 			 		            return; 
 		        }*/
 		    	   
-		        if( txtemri.getText().isEmpty()) {
+		  /*      if( txtemri.getText().isEmpty()) {
 		        	lbl0.setText("Ploteso fushen!");
 		        }
 		      
@@ -366,13 +365,67 @@ public class ApplicationForm extends Application {
 		        if( txtNiveliiStudimeve.getText().isEmpty()) {
 		        	lblnm.setText("Ploteso fushen!");
 		        }
-
-		        
-		        else {
-		        	shtoAplikues();
+*/
+		 if(choiceboxBursa.getValue().toString() == "MASHT") {
+			 try {
+		    if(((choicebox1.getValue().toString() == "Fakulteti i Inxhinierise Elektrike dhe Kompjuterike")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Nd€rtimtarise dhe Arkitektures")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Inxhinierise Mekanike"))&& 
+		    		((choiceboxnm.getValue().toString() == "Mbi 8")||(choiceboxnm.getValue().toString() == "Mbi 9"))) {
+	        		shtoAplikues();
 		        	zgjedhAplikues();
-		        }
 
+		        }
+		    else if(((choicebox1.getValue().toString() == "Fakulteti Filozofik")||(choicebox1.getValue().toString() == "Fakulteti Filologjik")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Shkencave Sportive")||(choicebox1.getValue().toString() == "Fakulteti Juridik"
+		    		||(choicebox1.getValue().toString() == "Fakulteti Ekonomik")||(choicebox1.getValue().toString() == "Fakulteti i Mjekesise")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i shkencave matematiko-natyrore")))
+		    		&& (choiceboxnm.getValue().toString() == "Mbi 9")) {
+	        	shtoAplikues();	
+		    	zgjedhAplikues();
+
+		        }
+			 }
+			 catch(Exception e) {
+				 
+			 }
+		 }
+		 
+		 
+		 if(choiceboxBursa.getValue().toString() == "Komunale" && chKomuna.getValue().toString()=="Prishtine") {
+			 try {
+		    if(((choicebox1.getValue().toString() == "Fakulteti i Inxhinierise Elektrike dhe Kompjuterike")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Ndertimtarise dhe Arkitektures")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Inxhinierise Mekanike"))&& 
+		    		((choiceboxnm.getValue().toString() == "Mbi 8")||(choiceboxnm.getValue().toString() == "Mbi 9"))) {
+	        		shtoAplikues();
+		        	zgjedhAplikues();
+
+		        }
+		    else if(((choicebox1.getValue().toString() == "Fakulteti Filozofik")||(choicebox1.getValue().toString() == "Fakulteti Filologjik")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Arteve")||(choicebox1.getValue().toString() == "Fakulteti i Edukimit")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i Shkencave Sportive")||(choicebox1.getValue().toString() == "Fakulteti Juridik"
+		    		||(choicebox1.getValue().toString() == "Fakulteti Ekonomik")||(choicebox1.getValue().toString() == "Fakulteti i Mjekesise")
+		    		||(choicebox1.getValue().toString() == "Fakulteti i shkencave matematiko-natyrore")))
+		    		&& (choiceboxnm.getValue().toString() == "Mbi 9")) {
+	        	shtoAplikues();	
+		    	zgjedhAplikues();
+
+		        }
+		    else {
+		    	shtoAplikues();
+		    }
+			 }
+			 catch(Exception e) {
+				 
+			 }
+		 }
+		 
+		    else {
+	        	shtoAplikues();
+	       // 	zgjedhAplikues();
+
+	        }
 		        	
 		        // !txtmbiemri.getText().matches("[a-z A-Z]+")
 		       // showAlert(Alert.AlertType.CONFIRMATION, pane.getScene().getWindow(), 
@@ -422,7 +475,7 @@ public static void main(String[] args) {
 private void shtoAplikues() { 
 	try {
 		
-		String query = "INSERT INTO aplikuesit(id, emri, mbiemri, ditelindja,mesatarja,email,numri,qyteti,adresa,VitiiStudimeve,NiveliiStudimeve,universiteti,fakulteti,drejtimi,bursa) VALUES ( ?, ? ,?,?, ?, ? ,?,?, ?, ? ,?,?, ?, ?,? )";
+		String query = "INSERT INTO aplikuesit(id, emri, mbiemri, ditelindja,mesatarja,email,numri,qyteti,adresa,VitiiStudimeve,NiveliiStudimeve,fakulteti,drejtimi,bursa) VALUES ( ? ,?,?, ?, ? ,?,?, ?, ? ,?,?, ?, ?,? )";
 		
 		PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
 		
@@ -437,10 +490,9 @@ private void shtoAplikues() {
 		preparedStatement.setString(9, txtadresa.getText());
 		preparedStatement.setString(10, txtVitiiStudimeve.getText());
 		preparedStatement.setString(11, txtNiveliiStudimeve.getText());
-		preparedStatement.setString(12, choicebox.getValue());
-		preparedStatement.setString(13, choicebox1.getValue());
-		preparedStatement.setString(14, txtdrejtimi.getText());
-		preparedStatement.setString(15, choiceboxBursa.getValue());
+		preparedStatement.setString(12, choicebox1.getValue());
+		preparedStatement.setString(13, txtdrejtimi.getText());
+		preparedStatement.setString(14, choiceboxBursa.getValue());
 
 		
 		if(preparedStatement.executeUpdate() > 0) {
@@ -471,7 +523,7 @@ private void shtoAplikues() {
 private void zgjedhAplikues() { 
 	try {
 		
-		String query = "INSERT INTO Selected(sid, emri, mbiemri, ditelindja,mesatarja,email,numri,qyteti,adresa,VitiiStudimeve,NiveliiStudimeve,universiteti,fakulteti,drejtimi,bursa) VALUES ( ?, ? ,?,?, ?, ? ,?,?, ?, ? ,?,?, ?, ?,? )";
+		String query = "INSERT INTO Selected(sid, emri, mbiemri, ditelindja,mesatarja,email,numri,qyteti,adresa,VitiiStudimeve,NiveliiStudimeve,fakulteti,drejtimi,bursa) VALUES (? ,?,?, ?, ? ,?,?, ?, ? ,?,?, ?, ?,? )";
 		
 		PreparedStatement prStatement = dbConnection.prepareStatement(query);
 		
@@ -482,14 +534,13 @@ private void zgjedhAplikues() {
 		prStatement.setString(5, txtnm.getText());
 		prStatement.setString(6, txtemail.getText());
 		prStatement.setString(7, txtnrtel.getText());
-		prStatement.setString(8, txtqyteti.getText());
+		prStatement.setString(8, chKomuna.getValue());
 		prStatement.setString(9, txtadresa.getText());
 		prStatement.setString(10, txtVitiiStudimeve.getText());
 		prStatement.setString(11, txtNiveliiStudimeve.getText());
-		prStatement.setString(12, choicebox.getValue());
-		prStatement.setString(13, choicebox1.getValue());
-		prStatement.setString(14, txtdrejtimi.getText());
-		prStatement.setString(15, choiceboxBursa.getValue());
+		prStatement.setString(12, choicebox1.getValue());
+		prStatement.setString(13, txtdrejtimi.getText());
+		prStatement.setString(14, choiceboxBursa.getValue());
 		
 		if(prStatement.executeUpdate() > 0) {
 			resultLabel.setText("U shtua");
