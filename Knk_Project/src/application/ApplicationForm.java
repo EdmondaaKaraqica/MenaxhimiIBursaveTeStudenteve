@@ -453,7 +453,7 @@ public class ApplicationForm extends Application {
 	private void setConnection() {
 		String dbName = "menaxhimi_bursave";
 		String userName="root";
-		String password="";
+		String password="1234";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,userName,password);
