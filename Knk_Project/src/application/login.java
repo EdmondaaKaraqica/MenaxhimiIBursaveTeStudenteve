@@ -139,7 +139,7 @@ public class login extends Application {
 		VBox vbox = new VBox();
 		vbox.setAlignment(Pos.CENTER);
 		vbox.getChildren().addAll(gridPane,r);
-		
+		//hjh
 		pane.setCenter(vbox);
 		
 		pane.setBackground(new Background(new BackgroundFill(Color.ALICEBLUE, CornerRadii.EMPTY, Insets.EMPTY)));	
