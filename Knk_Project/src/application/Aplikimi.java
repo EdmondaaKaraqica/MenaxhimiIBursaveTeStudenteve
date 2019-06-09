@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 //import static javafx.geometry.HPos.RIGHT;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.geometry.HPos;
 //import javafx.scene.control.Alert.AlertType;
 import javafx.geometry.Insets;
@@ -279,6 +280,8 @@ public class Aplikimi{
 		stage.setTitle("Forma e Aplikimit");
 		//primaryStage.setResizable(false);
 		stage.setScene(scene);
+		stage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
+
 		stage.show();
 		
 		Button btnfile = new Button("Open file");

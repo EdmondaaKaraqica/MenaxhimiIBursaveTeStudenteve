@@ -17,19 +17,20 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class addAdmin extends Application {
+public class addAdmin {
 	 	private Connection dbConnection;
-	 	private TextField usernameTxt = new TextField();
-	 	private PasswordField passwordTxt = new PasswordField();
-		private Button submitButton = new Button("Regjistro");
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+	 	private static TextField usernameTxt = new TextField();
+	 	private static PasswordField passwordTxt = new PasswordField();
+		private static Button submitButton = new Button("Regjistro");
+	public static void createMainStage() {
+    	Stage primaryStage = new Stage();
         primaryStage.setTitle("Regjistroni nje administrues te ri");
        
         // Create the registration form grid pane
@@ -40,12 +41,13 @@ public class addAdmin extends Application {
         Scene scene = new Scene(gridPane, 800, 500);
         // Set the scene in primary stage	
         primaryStage.setScene(scene);
-        
+        primaryStage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
+
         primaryStage.show();
     }
 
 
-    private GridPane createRegistrationFormPane() {
+    private static GridPane createRegistrationFormPane() {
         // Instantiate a new Grid Pane
         GridPane gridPane = new GridPane();
 
@@ -76,7 +78,7 @@ public class addAdmin extends Application {
         return gridPane;
     }
 
-    private void addUIControls(GridPane gridPane) {
+    private static void addUIControls(GridPane gridPane) {
         // Add Header
         Label headerLabel = new Label("Regjistrohuni");
         headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
@@ -94,14 +96,6 @@ public class addAdmin extends Application {
         gridPane.add(usernameTxt, 1,1);
 
 
-        // Add Email Label
-//        Label emailLabel = new Label("Email ID : ");
-//        gridPane.add(emailLabel, 0, 2);
-//
-//        // Add Email Text Field
-//        TextField emailField = new TextField();
-//        emailField.setPrefHeight(40);
-//        gridPane.add(emailField, 1, 2);
 
         // Add Password Label
         Label passwordLabel = new Label("Fjalekalimi : ");
@@ -121,26 +115,7 @@ public class addAdmin extends Application {
         GridPane.setHalignment(submitButton, HPos.CENTER);
         GridPane.setMargin(submitButton, new Insets(20, 0,20,0));
 
-//        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                if(usernameTxt.getText().isEmpty()) {
-//                    showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Form Error!", "Please enter your name");
-//                    return;
-//                }
-////                if(emailField.getText().isEmpty()) {
-////                    showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Form Error!", "Please enter your email id");
-////                    return;
-////                }
-//                if(passwordTxt.getText().isEmpty()) {
-//                    showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Form Error!", "Please enter a password");
-//                    return;
-//                }
-//
-//                showAlert(Alert.AlertType.CONFIRMATION, gridPane.getScene().getWindow(), "Registration Successful!", "Welcome " + usernameTxt.getText());
-//            }
-//        });
-//        
+
         submitButton.setOnAction(e ->{
         	insertAdmin();
         });
@@ -174,7 +149,7 @@ public class addAdmin extends Application {
 		}
 	}
     
-    public void showAdmin() {
+    public static void showAdmin() {
 		List<LoginForm> admin = LoginForm.getAdmin();
 		
 		ObservableList<LoginForm> adminList = FXCollections.observableArrayList();
@@ -186,7 +161,7 @@ public class addAdmin extends Application {
 		//adminTable.setItems(adminList);
 	}
 	
-public void insertAdmin() {
+public static void insertAdmin() {
 	
 		
 		if(LoginForm.addAdmin(usernameTxt.getText(), passwordTxt.getText())) {
@@ -197,8 +172,5 @@ public void insertAdmin() {
 		
 	}
 
-    
-    public static void main(String[] args) {
-        launch(args);
-    }
+ 
 }

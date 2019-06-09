@@ -21,7 +21,7 @@ public class DBConnection {
 		
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?verifyServerCertificate=false&useSSL=true","root","1234");
+				dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?verifyServerCertificate=false&useSSL=true","root","");
 			}  catch (Exception ex) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Database problem");

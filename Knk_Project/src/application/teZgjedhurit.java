@@ -1,4 +1,4 @@
-package projekti;
+package application;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -234,7 +234,7 @@ public class teZgjedhurit extends Application
 		    	 secondPane.add(shto, 1, 10);
 		    	 shto.setOnAction(new EventHandler<ActionEvent>() {
 		 		    @Override public void handle(ActionEvent e) {
-		 		    	float id = Float.parseFloat(idField.getText());
+		 		    	Float id = Float.parseFloat(idField.getText());
 		 		    	String emri = emriField.getText();
 		 		    	String mbiemri = emriField.getText();
 		 		    	Float mesatarja = Float.parseFloat(mesatarjaField.getText());
@@ -250,7 +250,7 @@ public class teZgjedhurit extends Application
 						} catch (SQLException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
-							System.out.println("Nuk munesh me insertu te dhena");
+							System.out.println("Nuk mundesh me insertu te dhena");
 						}
 		 		    	try {
 							refreshTable();
@@ -346,7 +346,7 @@ public class teZgjedhurit extends Application
         {
         	String correct = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             java.sql.Connection conn = DriverManager.getConnection
-            		("jdbc:mysql://localhost:3306/menaxhimi_bursave"+correct, "root", "root");
+            		("jdbc:mysql://localhost:3306/menaxhimi_bursave"+correct, "root", "");
            
             System.out.println("Jeni lidhur me sukses");
             

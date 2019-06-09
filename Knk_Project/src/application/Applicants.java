@@ -48,6 +48,12 @@ public class Applicants {
 		
 	}
 	
+	public Applicants(int int1, int int2, String string, String string2, String string3, String string4, String string5,
+			String string6, String string7, int int3, String string8, String string9, String string10,
+			String string11) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -262,7 +268,7 @@ public class Applicants {
 		
 		while(rst.next()) {
 			Applicants applicants = new Applicants(rst.getInt(1), rst.getInt(2), rst.getString(3),
-					rst.getString(4), rst.getString(5), rst.getString(6),  rst.getInt(7), rst.getString(8),
+					rst.getString(4), rst.getString(5), rst.getString(6),rst.getString(7), rst.getString(8),
 					rst.getString(9) ,rst.getInt(10), rst.getString(11), rst.getString(12),
 					rst.getString(13), rst.getString(14));
 			

@@ -1,4 +1,4 @@
-package projekti;
+package application;
 
 public class getDheSet 
 {

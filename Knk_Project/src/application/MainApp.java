@@ -24,44 +24,46 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 
-public class MainApp extends Application {
+public class MainApp{
 	
 	
 	
-	private TextField idTxt = new TextField();
-	private TextField idStudentitTxt = new TextField();
-	private TextField emriTxt = new TextField();
-	private TextField mbiemriTxt = new TextField();
+	private static TextField idTxt = new TextField();
+	private static TextField idStudentitTxt = new TextField();
+	private static TextField emriTxt = new TextField();
+	private static TextField mbiemriTxt = new TextField();
 //	private TextField ditelindjaTxt = new TextField();
-	private TextField mesatarjaTxt = new TextField();
-	private TextField emailTxt = new TextField();
-	private TextField numriTxt = new TextField();
-	private TextField qytetiTxt = new TextField();
-	private TextField adresaTxt = new TextField();
-	private TextField vitiiStudimeveTxt = new TextField();
-	private TextField niveliiStudimeveTxt = new TextField();
-	private TextField fakultetiTxt = new TextField();
-	private TextField drejtimiTxt = new TextField();
-	private TextField bursaTxt = new TextField();
+	private static TextField mesatarjaTxt = new TextField();
+	private static TextField emailTxt = new TextField();
+	private static TextField numriTxt = new TextField();
+	private static TextField qytetiTxt = new TextField();
+	private static TextField adresaTxt = new TextField();
+	private static TextField vitiiStudimeveTxt = new TextField();
+	private static TextField niveliiStudimeveTxt = new TextField();
+	private static TextField fakultetiTxt = new TextField();
+	private static TextField drejtimiTxt = new TextField();
+	private static TextField bursaTxt = new TextField();
 	
-	private Button insertBtn = new Button("Insert");
+	private static Button insertBtn = new Button("Insert");
 //	private Button updateBtn = new Button("Update");
 //	private Button deleteBtn = new Button("Delete");
-	private Button clearBtn = new Button("Clear");
+	private static Button clearBtn = new Button("Clear");
 	
 	
 	
-	private TableView applicantsTable = new TableView();
+	private static TableView applicantsTable = new TableView();
 	
-	@Override
-	public void start (Stage primaryStage) {
-		
+	
+	public static void AplikantetStage(){
+		Stage stage = new Stage();
+
 		GridPane formPane = new GridPane();
 		
 		formPane.addRow(0, new Label("ID: "), idTxt);
@@ -207,20 +209,18 @@ public class MainApp extends Application {
 		mainPane.setPadding(new Insets(30, 30, 30, 30));
 		
 		Scene scene = new Scene(mainPane, 1500, 700);
-		primaryStage.setTitle("Applicants");
-		primaryStage.setScene(scene);
+		stage.setTitle("Applicants");
+		stage.setScene(scene);
 		
+		stage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
 		showApplicants();
-		
-		primaryStage.show();
-		
-		
-	
+
+		stage.show();
 		
 	}
 	
 
-	public void insertApplicants() {
+	public static void insertApplicants() {
 		
 		if(Applicants.addApplicants(Integer.parseInt(idTxt.getText()), Integer.parseInt(idStudentitTxt.getText()),
 				emriTxt.getText(), mbiemriTxt.getText(), 
@@ -233,28 +233,9 @@ public class MainApp extends Application {
 		}
 	}	
 	
-//	private void setConnection() {
-////		String dbName = "menaxhimi_bursave";
-////		String userName="root";
-////		String password="1234";
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?verifyServerCertificate=false&useSSL=true","root","1234");
-//		}  catch (Exception ex) {
-//			Alert alert = new Alert(AlertType.ERROR);
-//			alert.setTitle("Database problem");
-//			alert.setHeaderText(null);
-//			alert.setContentText("Can not connect to database");
-//			alert.showAndWait();
-//			System.exit(0);
-//		}
-//	}
+
 	
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
-	
-	public void showApplicants() {
+	public static void showApplicants() {
 		List<Applicants> aplicants = Applicants.getApplicants();
 		
 		ObservableList<Applicants> applicantsList = FXCollections.observableArrayList();
@@ -267,7 +248,7 @@ public class MainApp extends Application {
 	}
 	
 	
-	public void clearForm() {
+	public static void clearForm() {
 		idTxt.setText("");
 		idStudentitTxt.setText("");
 		emriTxt.setText("");

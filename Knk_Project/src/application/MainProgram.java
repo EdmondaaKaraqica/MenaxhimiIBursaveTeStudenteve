@@ -55,15 +55,32 @@ public class MainProgram  {
         Menu fileMenu = new Menu("File");
         Menu LngMenu = new Menu("Gjuha");
         Menu PaneletMenu = new Menu("Panelet");
+        Menu ProfilMenu = new Menu("Profili");
         Menu helpMenu = new Menu("Ndihma");
-
+        
+        MenuItem addItem = new MenuItem("Shto Admin");
+        MenuItem changeItem = new MenuItem("Ndrysho Password-in");
         MenuItem infoitem = new MenuItem("Info     CTRL+H");
         helpMenu.getItems().addAll(infoitem);
         MenuItem apItem = new MenuItem(" Aplikimi ");
-        PaneletMenu.getItems().addAll(apItem);
+        MenuItem apItem2 = new MenuItem(" Aplikantet ");
+        MenuItem apItem3 = new MenuItem(" Te zgjedhurit ");
+
+        ProfilMenu.getItems().addAll(addItem,changeItem);
+        PaneletMenu.getItems().addAll(apItem,apItem2,apItem3);
+        changeItem.setOnAction(e->{
+        	ChangePsw.createMainStage();  	
+        });
+        addItem.setOnAction(e->{
+        	addAdmin.createMainStage();  	
+        });
         apItem.setOnAction(e->{
-        	//mainStage.hide();
 			Aplikimi.createMainStage();
+        });
+        
+        apItem2.setOnAction(e->{
+        	//mainStage.hide();
+			MainApp.AplikantetStage();
         });
 
         MenuItem ExitItem = new MenuItem("Dil     CTRL+V");
@@ -120,7 +137,7 @@ public class MainProgram  {
     
         MenuBar menuBar = new MenuBar();
         
-        menuBar.getMenus().addAll(fileMenu,LngMenu,PaneletMenu,helpMenu);
+        menuBar.getMenus().addAll(fileMenu,LngMenu,PaneletMenu,helpMenu,ProfilMenu);
 
 		
 		 Image imageB = new Image ("file:///C:/Users/HP/git/knkProjekt/Knk_Project/light-grey-background-02.jpg");
@@ -228,6 +245,8 @@ public class MainProgram  {
 			Stage newWindow = new Stage();
 			newWindow.setTitle("Info");
 			newWindow.setScene(secondScene);
+			newWindow.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
+
 	       // Set position of second window, related to primary window
 		//	newWindow.setX(stage.getX() + 200);
 		//	newWindow.setY(stage.getY() + 100);
@@ -310,6 +329,7 @@ public class MainProgram  {
 			Scene secondScene = new Scene(layout, 500,450);
 			// New window (Stage)
 			Stage newWindow = new Stage();
+			newWindow.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
 
 			newWindow.setTitle("Info");
 			newWindow.setScene(secondScene);

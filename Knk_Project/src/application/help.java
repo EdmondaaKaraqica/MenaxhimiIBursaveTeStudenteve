@@ -89,6 +89,7 @@ public class help {
 		Scene secondScene = new Scene(layout, 500,450);
 		// New window (Stage)
 		Stage newWindow = new Stage();
+		newWindow.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
 		newWindow.setTitle("Info");
 		newWindow.setScene(secondScene);
        // Set position of second window, related to primary window

@@ -123,10 +123,11 @@ public class login extends Application {
 
 		});
 		gridPane.add(btnLogin, 1, 5);
-
-		btnLogin.setMinSize(50, 30);
-		btnLogin.setTextFill(Color.CYAN);
-		btnLogin.setStyle("-fx-background-color: #000000,linear-gradient(#7ebcea, #2f4b8f),linear-gradient(#426ab7, #263e75),linear-gradient(#395cab, #223768);");
+		gridPane.setHalignment(btnLogin, HPos.CENTER);
+		btnLogin.setMinSize(70, 30);
+		btnLogin.setTextFill(Color.WHITE);
+		btnLogin.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,13));
+		btnLogin.setStyle("-fx-background-color: #9be8d6,linear-gradient(#9be8d6, #2f4b8f),linear-gradient(#9be8d6, #263e75),linear-gradient(#9be8d6, #223768);");
 		
 		btnLogin.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
 		
@@ -141,7 +142,8 @@ public class login extends Application {
 		
 		pane.setCenter(vbox);
 		
-		
+		pane.setBackground(new Background(new BackgroundFill(Color.ALICEBLUE, CornerRadii.EMPTY, Insets.EMPTY)));	
+
 	
 		Scene scene = new Scene(pane,500,400);
 		primaryStage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/safety-clip-round.png"));
