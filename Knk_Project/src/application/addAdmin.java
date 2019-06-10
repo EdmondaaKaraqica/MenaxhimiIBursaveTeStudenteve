@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -29,20 +30,17 @@ public class addAdmin {
 	 	private static TextField usernameTxt = new TextField();
 	 	private static PasswordField passwordTxt = new PasswordField();
 		private static Button submitButton = new Button("Regjistro");
+		
 	public static void createMainStage() {
     	Stage primaryStage = new Stage();
         primaryStage.setTitle("Regjistroni nje administrues te ri");
        
 
         GridPane gridPane = createRegistrationFormPane();
-       
         addUIControls(gridPane);
-       
         Scene scene = new Scene(gridPane, 800, 500);
-       
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
-
         primaryStage.show();
     }
 
@@ -50,17 +48,11 @@ public class addAdmin {
     private static GridPane createRegistrationFormPane() {
        
         GridPane gridPane = new GridPane();
-
-       
+        
+        gridPane.setBackground(new Background(new BackgroundFill(Color.color(0.2, 0.3, 0.2, 0.04), CornerRadii.EMPTY, Insets.EMPTY)));	
         gridPane.setAlignment(Pos.CENTER);
-
-        
         gridPane.setPadding(new Insets(40, 40, 40, 40));
-
-   
         gridPane.setHgap(10);
-
-        
         gridPane.setVgap(10);
 
         
@@ -81,7 +73,7 @@ public class addAdmin {
     private static void addUIControls(GridPane gridPane) {
      
         Label headerLabel = new Label("Regjistrohuni");
-        headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
+        headerLabel.setFont(Font.font("Trebuchet MS", FontWeight.BOLD, 24));
         gridPane.add(headerLabel, 0,0,2,1);
         GridPane.setHalignment(headerLabel, HPos.CENTER);
         GridPane.setMargin(headerLabel, new Insets(20, 0,20,0));
@@ -89,17 +81,18 @@ public class addAdmin {
       
         Label nameLabel = new Label("Emri i perdoruesit: ");
         gridPane.add(nameLabel, 0,1);
+        nameLabel.setFont(Font.font("Trebuchet MS", FontWeight.NORMAL, 10));
 
        
         usernameTxt.setPrefHeight(40);
         gridPane.add(usernameTxt, 1,1);
-
+        
 
 
         // Add Password Label
         Label passwordLabel = new Label("Fjalekalimi : ");
         gridPane.add(passwordLabel, 0, 3);
-
+        passwordLabel.setFont(Font.font("Trebuchet MS", FontWeight.NORMAL, 10));
 
         passwordTxt.setPrefHeight(40);
         gridPane.add(passwordTxt, 1, 3);
@@ -109,6 +102,7 @@ public class addAdmin {
         submitButton.setPrefHeight(40);
         submitButton.setDefaultButton(true);
         submitButton.setPrefWidth(100);
+        submitButton.setFont(Font.font("Trebuchet MS", FontWeight.BOLD, 18));
         gridPane.add(submitButton, 0, 4, 2, 1);
         GridPane.setHalignment(submitButton, HPos.CENTER);
         GridPane.setMargin(submitButton, new Insets(20, 0,20,0));

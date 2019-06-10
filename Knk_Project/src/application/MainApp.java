@@ -46,7 +46,6 @@ public class MainApp{
 	private static TextField idStudentitTxt = new TextField();
 	private static TextField emriTxt = new TextField();
 	private static TextField mbiemriTxt = new TextField();
-//	private TextField ditelindjaTxt = new TextField();
 	private static TextField mesatarjaTxt = new TextField();
 	private static TextField emailTxt = new TextField();
 	private static TextField numriTxt = new TextField();
@@ -59,8 +58,6 @@ public class MainApp{
 	private static TextField bursaTxt = new TextField();
 	
 	private static Button insertBtn = new Button("Insert");
-//	private Button updateBtn = new Button("Update");
-//	private Button deleteBtn = new Button("Delete");
 	private static Button clearBtn = new Button("Clear");
 	
 	
@@ -89,35 +86,10 @@ public class MainApp{
 		formPane.addRow(13, new Label("Drejtimi: "), drejtimiTxt);
 		formPane.addRow(14, new Label("Bursa: "), bursaTxt);
 		
-		formPane.setBackground(new Background(new BackgroundFill(Color.color(0.2, 0.3, 0.2, 0.04), CornerRadii.EMPTY, Insets.EMPTY)));
+	
+		formPane.setHgap(30);
+		formPane.setVgap(17);
 		
-		
-//		idTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		idStudentitTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		emriTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		mbiemriTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		mbiemriTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		emailTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		qytetiTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		adresaTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		vitiiStudimeveTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		niveliiStudimeveTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
-//		
-//		
-//		
-//		insertBtn.setMinSize(70, 30);
-//		insertBtn.setTextFill(Color.WHITE);
-//		insertBtn.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,13));
-//		insertBtn.setStyle("-fx-background-color: #9be8d6,linear-gradient(#9be8d6, #2f4b8f),linear-gradient(#9be8d6, #263e75),linear-gradient(#9be8d6, #223768);");
-//		insertBtn.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
-//		clearBtn.setMinSize(70, 30);
-//		clearBtn.setTextFill(Color.WHITE);
-//		clearBtn.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,13));
-//		clearBtn.setStyle("-fx-background-color: #9be8d6,linear-gradient(#9be8d6, #2f4b8f),linear-gradient(#9be8d6, #263e75),linear-gradient(#9be8d6, #223768);");
-//		clearBtn.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
-//		formPane.setHgap(30);
-//		formPane.setVgap(17);
-//		
 		
 //		Button deleteBtn = new Button();
 //		deleteBtn.setText("Fshij");
@@ -175,9 +147,7 @@ public class MainApp{
 		column4.setCellValueFactory(new PropertyValueFactory("mbiemri"));
 		column4.setPrefWidth(70);
 		
-//		TableColumn<String, Applicants> column5 = new TableColumn<>("Ditelindja");
-//		column5.setCellValueFactory(new PropertyValueFactory("ditelindja"));
-//		column5.setPrefWidth(70);
+
 		
 		TableColumn<String, Applicants> column6 = new TableColumn<>("Mesatarja");
 		column6.setCellValueFactory(new PropertyValueFactory("mesatarja"));
@@ -223,7 +193,6 @@ public class MainApp{
 		applicantsTable.getColumns().add(column2);
 		applicantsTable.getColumns().add(column3);
 		applicantsTable.getColumns().add(column4);
-//		applicantsTable.getColumns().add(column5);
 		applicantsTable.getColumns().add(column6);
 		applicantsTable.getColumns().add(column7);
 		applicantsTable.getColumns().add(column8);
@@ -259,7 +228,6 @@ public class MainApp{
 		
 		if(Applicants.addApplicants(Integer.parseInt(idTxt.getText()), Integer.parseInt(idStudentitTxt.getText()),
 				emriTxt.getText(), mbiemriTxt.getText(), 
-//				Integer.parseInt(ditelindjaTxt.getText()), 
 				mesatarjaTxt.getText(), emailTxt.getText(),
 				Integer.parseInt(numriTxt.getText()),qytetiTxt.getText(), adresaTxt.getText(),Integer.parseInt(vitiiStudimeveTxt.getText()), niveliiStudimeveTxt.getText(), fakultetiTxt.getText(),
 				drejtimiTxt.getText(), bursaTxt.getText())) {
@@ -288,7 +256,6 @@ public class MainApp{
 		idStudentitTxt.setText("");
 		emriTxt.setText("");
 		mbiemriTxt.setText("");
-//		ditelindjaTxt.setText("");
 		mesatarjaTxt.setText("");
 		emailTxt.setText("");
 		numriTxt.setText("");

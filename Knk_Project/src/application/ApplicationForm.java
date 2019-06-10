@@ -444,7 +444,7 @@ public class ApplicationForm extends Application {
 //		String password="1234";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?verifyServerCertificate=false&useSSL=true","root","1234");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?autoReconnect=true&useSSL=false","root","1234");
 		}  catch (Exception ex) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Database problem");
