@@ -346,7 +346,7 @@ public class teZgjedhurit extends Application
         {
         	String correct = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             java.sql.Connection conn = DriverManager.getConnection
-            		("jdbc:mysql://localhost:3306/menaxhimi_bursave"+correct, "root", "");
+            		("jdbc:mysql://localhost:3306/menaxhimi_bursave"+correct, "root", "1234");
            
             System.out.println("Jeni lidhur me sukses");
             

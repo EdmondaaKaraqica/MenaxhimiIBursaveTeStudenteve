@@ -25,10 +25,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 
 
 public class MainApp{
@@ -71,7 +78,7 @@ public class MainApp{
 		formPane.addRow(2, new Label("Emri: "), emriTxt);
 		formPane.addRow(3, new Label("Mbiemri: "), mbiemriTxt);
 //		formPane.addRow(4, new Label("Ditelindja: "), ditelindjaTxt);
-		formPane.addRow(5, new Label("Mesatarja: "), mesatarjaTxt);
+		formPane.addRow(5, new Label("Mesatarja: "), mbiemriTxt);
 		formPane.addRow(6, new Label("Email: "), emailTxt);
 		formPane.addRow(7, new Label("Numri: "),numriTxt );
 		formPane.addRow(8, new Label("Qyteti: "),qytetiTxt );
@@ -82,8 +89,36 @@ public class MainApp{
 		formPane.addRow(13, new Label("Drejtimi: "), drejtimiTxt);
 		formPane.addRow(14, new Label("Bursa: "), bursaTxt);
 		
-		formPane.setHgap(30);
-		formPane.setVgap(17);
+		formPane.setBackground(new Background(new BackgroundFill(Color.color(0.2, 0.3, 0.2, 0.04), CornerRadii.EMPTY, Insets.EMPTY)));
+		
+		
+//		idTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		idStudentitTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		emriTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		mbiemriTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		mbiemriTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		emailTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		qytetiTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		adresaTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		vitiiStudimeveTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		niveliiStudimeveTxt.setFont(Font.font("Times new Roman",FontWeight.BOLD,15));
+//		
+//		
+//		
+//		insertBtn.setMinSize(70, 30);
+//		insertBtn.setTextFill(Color.WHITE);
+//		insertBtn.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,13));
+//		insertBtn.setStyle("-fx-background-color: #9be8d6,linear-gradient(#9be8d6, #2f4b8f),linear-gradient(#9be8d6, #263e75),linear-gradient(#9be8d6, #223768);");
+//		insertBtn.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
+//		clearBtn.setMinSize(70, 30);
+//		clearBtn.setTextFill(Color.WHITE);
+//		clearBtn.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,13));
+//		clearBtn.setStyle("-fx-background-color: #9be8d6,linear-gradient(#9be8d6, #2f4b8f),linear-gradient(#9be8d6, #263e75),linear-gradient(#9be8d6, #223768);");
+//		clearBtn.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
+//		formPane.setHgap(30);
+//		formPane.setVgap(17);
+//		
+		
 //		Button deleteBtn = new Button();
 //		deleteBtn.setText("Fshij");
 //		deleteBtn.setOnAction(new EventHandler<ActionEvent>() {
