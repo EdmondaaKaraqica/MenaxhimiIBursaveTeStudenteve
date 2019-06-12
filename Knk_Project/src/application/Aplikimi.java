@@ -40,6 +40,7 @@ import java.text.SimpleDateFormat;
 
 public class Aplikimi{
 
+	
 	private static Connection dbConnection;
 	private static Label resultLabel;
 	static TextField txtemri = new TextField();
@@ -78,6 +79,7 @@ public class Aplikimi{
 		
 		
 		pane.setBackground(new Background(new BackgroundFill(Color.color(0.2, 0.3, 0.2, 0.04), CornerRadii.EMPTY, Insets.EMPTY)));
+		
 		
 		Label lblemri = new Label("Emri");
 		Label lblmbiemri = new Label("Mbiemri");

@@ -45,23 +45,18 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 
-public class teZgjedhurit extends Application
+public class teZgjedhurit{
 
 
-{
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
+		static TableView<getDheSet> table = new TableView();
+		static Connection conn = getConnection();
 	
-		TableView<getDheSet> table = new TableView();
-		Connection conn = getConnection();
-	
-	@Override
-	public void start(Stage primaryStage) throws SQLException 
+	public static void createMainStage() throws SQLException {
 	{
 		
 				
-		
+		Stage primaryStage = new Stage();
+
 		primaryStage.setTitle("Studentet qe kane fituar bursen");
 		
 		GridPane pane = new GridPane();
@@ -118,8 +113,8 @@ public class teZgjedhurit extends Application
         
         String query = "SELECT * FROM Selected where mesatarja>=8 ORDER BY mesatarja DESC ";
         ResultSet fetchedBursistat = st.executeQuery(query);
-		try	
-		{
+	     try	
+		    {
 			while(fetchedBursistat.next())
 			{
 				
@@ -293,13 +288,15 @@ public class teZgjedhurit extends Application
 		
 		Scene scene = new Scene(pane);
 		primaryStage.setScene(scene);
+		primaryStage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
+
 		primaryStage.show();
 			
-		
+	}
 	}
 	
 	
-	public void refreshTable() throws SQLException { 
+	public static void refreshTable() throws SQLException { 
 
 		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 		ObservableList<getDheSet> optTable = FXCollections.observableArrayList();

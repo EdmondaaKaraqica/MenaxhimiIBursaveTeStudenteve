@@ -2,6 +2,7 @@ package application;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -74,6 +75,14 @@ public class MainProgram  {
         addItem.setOnAction(e->{
         	addAdmin.createMainStage();  	
         });
+        apItem3.setOnAction(e->{
+        	try {
+				teZgjedhurit.createMainStage();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}  	
+        });
         apItem.setOnAction(e->{
 			Aplikimi.createMainStage();
         });
@@ -104,6 +113,11 @@ public class MainProgram  {
         	infoitem.setText("Info     CTRL+H");
         	apItem.setText("Application");
     		stage.setTitle("Scholarship Management System");
+    		apItem2.setText(" Applicants ");
+    		apItem3.setText(" Selected ");
+    		changeItem.setText(" Change Password ");
+    		addItem.setText(" Add Admin ");
+    		ProfilMenu.setText(" Profile ");
 
         	
 
@@ -123,7 +137,11 @@ public class MainProgram  {
         	infoitem.setText("Info     CTRL+H");
         	apItem.setText(" Aplikimi ");
     		stage.setTitle("Scholarship Management System");
-
+    		apItem2.setText(" Aplikantet ");
+    		apItem3.setText(" Te zgjedhurit ");
+    		changeItem.setText(" Ndrysho Password-in ");
+    		addItem.setText(" Shto Admin ");
+    		ProfilMenu.setText(" Profili ");
 
 
         });
@@ -350,9 +368,9 @@ public class MainProgram  {
 		pane.add(btnKomunale,4,2);
 		layoutt.setCenter(pane);
 		//vbox.getChildren().addAll(layoutt,pane);		
-		Scene scene = new Scene(layoutt, 1500, 820);
+		Scene scene = new Scene(layoutt);
 		stage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
-
+		stage.setMaximized(true);
 		stage.setTitle("Sistemi per menaxhimin e Bursave");
 		stage.setScene(scene);
 		stage.show();
@@ -372,6 +390,11 @@ public class MainProgram  {
 	        	EItem.setText("Anglisht");
 	        	AItem.setText("Shqip");
 	    		stage.setTitle("Sistemi per menaxhimin e Bursave");
+	    		apItem2.setText(" Applicants ");
+	    		apItem3.setText(" Selected ");
+	    		changeItem.setText(" Change Password ");
+	    		addItem.setText(" Add Admin ");
+	    		ProfilMenu.setText(" Profile ");
 
 	        	}
 			if(e.isControlDown() && e.getCode() == KeyCode.E) {
@@ -385,6 +408,11 @@ public class MainProgram  {
 	        	EItem.setText("English");
 	        	AItem.setText("Albanian");
 	    		stage.setTitle("Scholarship Management System");
+	    		apItem2.setText(" Aplikantet ");
+	    		apItem3.setText(" Te zgjedhurit ");
+	    		changeItem.setText(" Ndrysho Password-in ");
+	    		addItem.setText(" Shto Admin ");
+	    		ProfilMenu.setText(" Profili ");
 
 	        	}
 			if(e.isControlDown() && e.getCode() == KeyCode.H) {

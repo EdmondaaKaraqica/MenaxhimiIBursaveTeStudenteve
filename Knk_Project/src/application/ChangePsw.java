@@ -42,6 +42,7 @@ import java.sql.*;
 
 public class ChangePsw {
 	
+	
 	private static PasswordField txtPas;
 	private static TextField txtEmri;
 	private static Label lblResult;
@@ -51,9 +52,11 @@ public class ChangePsw {
 		setConnection();
 		Stage primaryStage = new Stage();
 		Label lbl = new Label("Ndrysho Fjalekalimin");
-		Label lblNew = new Label("Fjalekalimi i ri");
-		Label lblOld = new Label("username");
+		Label lblNew = new Label("Fjalekalimi i ri:");
+		Label lblOld = new Label("Username:");
 		
+
+
 		Button btn = new Button("Ruaj");
 		
 		txtPas = new PasswordField();
@@ -71,13 +74,25 @@ public class ChangePsw {
 		pane.add(lblOld,0,5);
 		pane.add(txtEmri,1,5);
 		pane.add(btn,1,6);
+		pane.setHalignment(btn,HPos.RIGHT);
+		pane.setHalignment(lbl,HPos.CENTER);
+
+		lbl.setTextFill(Color.DARKRED);
+		lbl.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.ITALIC, 45)); 
+		lblNew.setFont(Font.font("Times New Roman", FontWeight.MEDIUM, FontPosture.REGULAR, 17)); 
+		lblOld.setFont(Font.font("Times New Roman", FontWeight.MEDIUM, FontPosture.REGULAR, 17)); 
+		lblResult.setTextFill(Color.RED);
+		lbl.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.ITALIC, 13)); 
+		btn.setTextFill(Color.WHITE);
+		btn.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,13));
+		btn.setBackground(new Background(new BackgroundFill(Color.DARKRED, CornerRadii.EMPTY, Insets.EMPTY)));
 		
 		btn.setOnAction(e->{
 			
 			update();
 			
 		});
-		Scene scene = new Scene(pane,400,300);
+		Scene scene = new Scene(pane,800,500);
 		primaryStage.setTitle("Ndryshimi i fjalekalimit!");
 		primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("file:///C:/Users/HP/git/knkProjekt/Knk_Project/graphic-scholarship_800x600.png"));
