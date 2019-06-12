@@ -24,35 +24,33 @@ public class Applicants {
 	private String drejtimi;
 	private String bursa;
 	
-	public Applicants(int id, int idStudentit, String emri, String mbiemri,
+	public Applicants(int id1, int idStudentit1, String emri1, String mbiemri1,
 //			int ditelindja, 
-			String mesatarja, String email, int numri, String qyteti, String adresa, int VitiiStudimeve, 
-			String NiveliiStudimeve, String fakulteti, String drejtimi, String bursa)
+			String mesatarja1, String email1,int numri1, String qyteti1, String adresa1, int VitiiStudimeve1, 
+			String NiveliiStudimeve1, String fakulteti1, String drejtimi1, String bursa1)
 	{
-		this.id = id;
-		this.idStudentit = idStudentit;
-		this.emri= emri;
-		this.mbiemri = mbiemri;
+		this.id = id1;
+		this.idStudentit = idStudentit1;
+		this.emri= emri1;
+		this.mbiemri = mbiemri1;
 //		this.ditelindja = ditelindja;
-		this.mesatarja =mesatarja;
-		this.email = email;
-		this.numri = numri;
-		this.qyteti = qyteti;
-		this.adresa = adresa;
-		this.VitiiStudimeve = VitiiStudimeve;
-		this.NiveliiStudimeve = NiveliiStudimeve;
-		this.fakulteti = fakulteti;
-		this.drejtimi = drejtimi;
-		this.bursa = bursa;
+		this.mesatarja =mesatarja1;
+		this.email = email1;
+		this.numri = numri1;
+		this.qyteti = qyteti1;
+		this.adresa = adresa1;
+		this.VitiiStudimeve = VitiiStudimeve1;
+		this.NiveliiStudimeve = NiveliiStudimeve1;
+		this.fakulteti = fakulteti1;
+		this.drejtimi = drejtimi1;
+		this.bursa = bursa1;
 		
 		
 	}
 	
-	public Applicants(int int1, int int2, String string, String string2, String string3, String string4, String string5,
-			String string6, String string7, int int3, String string8, String string9, String string10,
-			String string11) {
-		// TODO Auto-generated constructor stub
-	}
+
+
+
 
 	public int getId() {
 		return id;
@@ -154,7 +152,7 @@ public class Applicants {
 		return fakulteti;
 	}
 	
-	public void setDakulteti(String fakulteti) {
+	public void setFakulteti(String fakulteti) {
 		 this.fakulteti = fakulteti;
 		
 	}
@@ -267,10 +265,8 @@ public class Applicants {
 		ResultSet rst = pst.executeQuery();
 		
 		while(rst.next()) {
-			Applicants applicants = new Applicants(rst.getInt(1), rst.getInt(2), rst.getString(3),
-					rst.getString(4), rst.getString(5), rst.getString(6),rst.getString(7), rst.getString(8),
-					rst.getString(9) ,rst.getInt(10), rst.getString(11), rst.getString(12),
-					rst.getString(13), rst.getString(14));
+			Applicants applicants = new Applicants(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getInt(7), 
+					rst.getString(8), rst.getString(9), rst.getInt(10), rst.getString(11), rst.getString(12), rst.getString(13), rst.getString(14));
 			
 			applicantsList.add(applicants);
 		}
@@ -279,7 +275,7 @@ public class Applicants {
 			ex.printStackTrace();
 		}
 		
-	
+
 		return applicantsList;
 	}
 	

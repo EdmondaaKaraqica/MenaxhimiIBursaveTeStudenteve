@@ -102,12 +102,12 @@ public class ChangePsw {
 	}
 
 	private static void setConnection() {
-		String dbName="menaxhimi_bursave";
-		String username = "root";
-		String password="";
+//		String dbName="menaxhimi_bursave";
+//		String username = "root";
+//		String password="";
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,username,password);
+		dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?autoReconnect=true&useSSL=false", "root", "1234");
 		}
 		catch(Exception e){
 			Alert alert = new Alert(AlertType.ERROR);

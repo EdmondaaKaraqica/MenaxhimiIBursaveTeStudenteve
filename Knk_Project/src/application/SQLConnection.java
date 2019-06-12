@@ -13,7 +13,7 @@ public class SQLConnection {
 		try {
 			Connection conn= null;
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?verifyServerCertificate=false&useSSL=true","root","");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?autoReconnect=true&useSSL=false","root","1234");
 			return conn;
 			
 			
