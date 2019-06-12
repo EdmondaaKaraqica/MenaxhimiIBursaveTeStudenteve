@@ -265,8 +265,8 @@ public class Applicants {
 		ResultSet rst = pst.executeQuery();
 		
 		while(rst.next()) {
-			Applicants applicants = new Applicants(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getInt(7), 
-					rst.getString(8), rst.getString(9), rst.getInt(10), rst.getString(11), rst.getString(12), rst.getString(13), rst.getString(14));
+			Applicants applicants = new Applicants(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4), rst.getString(6), rst.getString(7), rst.getInt(8), 
+					rst.getString(9), rst.getString(10), rst.getInt(11), rst.getString(12), rst.getString(13), rst.getString(14), rst.getString(15));
 			
 			applicantsList.add(applicants);
 		}

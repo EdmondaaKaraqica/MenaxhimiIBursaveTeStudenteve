@@ -153,17 +153,15 @@ public class login extends Application {
 		primaryStage.show();
 		
 		
-		
-	
 	}
 
 	private void setConnection() {
 		try {
-//			String dbName = "menaxhimi_bursave";
-//			String userName="root";
-//			String password="1234";
+			String dbName = "menaxhimi_bursave";
+			String userName="root";
+			String password="";
 			Class.forName("com.mysql.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?autoReconnect=true&useSSL=false", "root", "1234");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,userName,password);
 		} catch (Exception ex) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Database problem");
@@ -171,6 +169,7 @@ public class login extends Application {
 			alert.setContentText("Can not connect to database");
 			alert.showAndWait();
 			System.exit(0);
+			
 		}
 	}
 

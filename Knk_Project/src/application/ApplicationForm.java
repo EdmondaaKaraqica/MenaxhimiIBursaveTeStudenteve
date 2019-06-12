@@ -439,12 +439,12 @@ public class ApplicationForm extends Application {
 	
 
 	private void setConnection() {
-//		String dbName = "menaxhimi_bursave";
-//		String userName="root";
-//		String password="1234";
+		String dbName = "menaxhimi_bursave";
+		String userName="root";
+		String password="";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?autoReconnect=true&useSSL=false","root","1234");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,userName,password);
 		}  catch (Exception ex) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Database problem");

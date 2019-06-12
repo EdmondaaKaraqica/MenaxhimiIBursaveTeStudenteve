@@ -64,6 +64,8 @@ public class ChangePsw {
 		lblResult = new Label("");
 
 		GridPane pane = new GridPane();
+        pane.setBackground(new Background(new BackgroundFill(Color.ALICEBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+
 		pane.setAlignment(Pos.CENTER);
 		pane.setHgap(10);
 		pane.setVgap(5);
@@ -102,12 +104,12 @@ public class ChangePsw {
 	}
 
 	private static void setConnection() {
-//		String dbName="menaxhimi_bursave";
-//		String username = "root";
-//		String password="";
+		String dbName="menaxhimi_bursave";
+		String username = "root";
+		String password="";
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/menaxhimi_bursave?autoReconnect=true&useSSL=false", "root", "1234");
+		dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,username,password);
 		}
 		catch(Exception e){
 			Alert alert = new Alert(AlertType.ERROR);
