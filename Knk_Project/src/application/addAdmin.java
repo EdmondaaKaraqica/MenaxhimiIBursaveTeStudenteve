@@ -49,11 +49,12 @@ public class addAdmin {
        
         GridPane gridPane = new GridPane();
         
-        gridPane.setBackground(new Background(new BackgroundFill(Color.color(0.2, 0.3, 0.2, 0.04), CornerRadii.EMPTY, Insets.EMPTY)));	
+        //gridPane.setBackground(new Background(new BackgroundFill(Color.color(0.2, 0.3, 0.2, 0.04), CornerRadii.EMPTY, Insets.EMPTY)));	
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setPadding(new Insets(40, 40, 40, 40));
         gridPane.setHgap(10);
         gridPane.setVgap(10);
+        gridPane.setBackground(new Background(new BackgroundFill(Color.ALICEBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
         
 
@@ -74,6 +75,7 @@ public class addAdmin {
      
         Label headerLabel = new Label("Regjistrohuni");
         headerLabel.setFont(Font.font("Trebuchet MS", FontWeight.BOLD, 24));
+        headerLabel.setTextFill(Color.DARKMAGENTA);
         gridPane.add(headerLabel, 0,0,2,1);
         GridPane.setHalignment(headerLabel, HPos.CENTER);
         GridPane.setMargin(headerLabel, new Insets(20, 0,20,0));
@@ -81,6 +83,7 @@ public class addAdmin {
       
         Label nameLabel = new Label("Emri i perdoruesit: ");
         gridPane.add(nameLabel, 0,1);
+        nameLabel.setTextFill(Color.DARKMAGENTA);
         nameLabel.setFont(Font.font("Trebuchet MS", FontWeight.NORMAL, 10));
 
        
@@ -92,6 +95,7 @@ public class addAdmin {
         // Add Password Label
         Label passwordLabel = new Label("Fjalekalimi : ");
         gridPane.add(passwordLabel, 0, 3);
+        passwordLabel.setTextFill(Color.DARKMAGENTA);
         passwordLabel.setFont(Font.font("Trebuchet MS", FontWeight.NORMAL, 10));
 
         passwordTxt.setPrefHeight(40);
@@ -102,6 +106,7 @@ public class addAdmin {
         submitButton.setPrefHeight(40);
         submitButton.setDefaultButton(true);
         submitButton.setPrefWidth(100);
+        submitButton.setTextFill(Color.DARKMAGENTA);
         submitButton.setFont(Font.font("Trebuchet MS", FontWeight.BOLD, 18));
         gridPane.add(submitButton, 0, 4, 2, 1);
         GridPane.setHalignment(submitButton, HPos.CENTER);
@@ -110,15 +115,32 @@ public class addAdmin {
 
         submitButton.setOnAction(e ->{
         	insertAdmin();
+        	Stage secondStage = new Stage();
+            secondStage.setTitle("Regjistrimi i nje administruesi te ri");
+            
+	    	 GridPane secondPane = new GridPane();
+	    	 secondPane.setPadding(new Insets(20,20,20,20));
+	    	 
+	    	 Label secondLabel = new Label("Administruesi i ri eshte shtuar me sukses!");
+	    	 secondLabel.setTextFill(Color.DARKMAGENTA);
+	    	 secondPane.setBackground(new Background(new BackgroundFill(Color.ALICEBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+	    	 
+	    	 secondLabel.setFont(new Font("Arial",32));
+	    	 
+	    	 secondPane.add(secondLabel, 1, 0);
+	    	 
+	    	 Scene secondScene = new Scene(secondPane);
+     		secondStage.setScene(secondScene);
+     		secondStage.show();
         });
     }
 
     private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
-        alert.setTitle(title);
+        alert.setTitle("Regjistrimi i nje administruesi te ri");
         alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.initOwner(owner);
+        alert.setContentText("Administruesi u shtua me sukses");
+        
         alert.show();
     }
     
